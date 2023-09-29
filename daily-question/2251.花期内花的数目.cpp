@@ -13,18 +13,18 @@ public:
             cnt[flower[0]]++;
             cnt[flower[1] + 1]--;
         }
-        int m = persons.size();
-        vector<int> indices(n);
+        int m = people.size();
+        vector<int> indices(m);
         iota(indices.begin(), indices.end(), 0);
         sort(indices.begin(), indices.end(), [&](int a, int b) {
-            return persons[a] < persons[b];
+            return people[a] < people[b];
         });
 
         vector<int> ans(m);
         int curr = 0;
         auto it = cnt.begin();
         for (int x : indices) {
-            while (it != cnt.end() && it->first <= persons[x]) {
+            while (it != cnt.end() && it->first <= people[x]) {
                 curr += it->second;
                 it++;
             }
