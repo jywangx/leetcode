@@ -9,7 +9,7 @@ class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
         int n = nums.size();
-        vector<int> dp(n+1, INT_MIN);
+        vector<int> dp(n + 1, INT_MIN);
         int max_len = 0;
         for (int &num : nums) {
             if (num > dp[max_len]) {
